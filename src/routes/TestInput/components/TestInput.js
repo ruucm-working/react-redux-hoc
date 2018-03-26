@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../modules/counter'
 import { handleSelectChange } from '../modules/form'
 import { compose } from 'redux'
-import { lifecycle } from 'recompose'
 import { log } from 'ruucm-util'
 
 export const TestInput = ({ counter, selectedOption, increment, doubleAsync, handleSelectChange }) => (
@@ -40,12 +39,4 @@ TestInput.propTypes = {
   doubleAsync: PropTypes.func.isRequired,
 }
 
-// Component enhancer
-const enhance = compose(
-  lifecycle({
-    componentDidMount() {
-      log('hey');
-    },
-  }),
-)
-export default enhance(TestInput)
+export default TestInput

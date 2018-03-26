@@ -22,3 +22,5 @@ export default (store) => ({
     }, 'counter')
   }
 })
+
+

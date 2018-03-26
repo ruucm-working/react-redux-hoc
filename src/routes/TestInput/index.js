@@ -11,9 +11,11 @@ export default (store) => ({
           dependencies for bundling   */
       const TestInput = require('./containers/TestInputContainer').default
       const reducer = require('./modules/counter').default
+      const form_reducer = require('./modules/form').default
 
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'counter', reducer })
+      injectReducer(store, { key: 'selectedOption', reducer: form_reducer })
 
       /*  Return getComponent   */
       cb(null, TestInput)

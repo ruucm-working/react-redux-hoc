@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Select from 'react-select';
 import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../modules/counter'
+import { handleSelectChange } from '../modules/form'
 import { compose } from 'redux'
 import { lifecycle } from 'recompose'
 import { log } from 'ruucm-util'

@@ -34,7 +34,7 @@ export const doubleAsync = () => {
 
 export const actions = {
   increment,
-  doubleAsync
+  doubleAsync,
 }
 
 // ------------------------------------
@@ -42,7 +42,7 @@ export const actions = {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [COUNTER_INCREMENT]    : (state, action) => state + action.payload,
-  [COUNTER_DOUBLE_ASYNC] : (state, action) => state * 2
+  [COUNTER_DOUBLE_ASYNC] : (state, action) => state * 2,
 }
 
 // ------------------------------------

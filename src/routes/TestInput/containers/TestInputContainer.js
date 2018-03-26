@@ -20,9 +20,13 @@ const mapDispatchToProps = {
   doubleAsync
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
-})
+const mapStateToProps = (state) => { 
+  log('state', state);
+  return ({
+    counter : state.counter,
+    selectedOption: state.selectedOption
+  })
+}
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
 

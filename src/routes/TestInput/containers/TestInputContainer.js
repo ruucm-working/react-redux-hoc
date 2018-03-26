@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../modules/counter'
+import { handleSelectChange } from '../modules/form'
+import { log } from 'ruucm-util'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,6 +16,7 @@ import TestInput from '../components/TestInput'
 
 const mapDispatchToProps = {
   increment : () => increment(1),
+  handleSelectChange : (data) => handleSelectChange(data),
   doubleAsync
 }
 

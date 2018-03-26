@@ -7,7 +7,7 @@ import { compose } from 'redux'
 import { lifecycle } from 'recompose'
 import { log } from 'ruucm-util'
 
-export const TestInput = ({ counter, increment, doubleAsync }) => (
+export const TestInput = ({ counter, selectedOption, increment, doubleAsync, handleSelectChange }) => (
   <div style={{ margin: '0 auto' }} >
     <h2>TestInput: {counter}</h2>
     <button className='btn btn-primary' onClick={increment}>
@@ -17,6 +17,20 @@ export const TestInput = ({ counter, increment, doubleAsync }) => (
     <button className='btn btn-secondary' onClick={doubleAsync}>
       Double (Async)
     </button>
+    <Select
+      name="form-field-name"
+      value={selectedOption}
+      placeholder='시즌 선택' 
+      onChange={
+        (data) => {
+          handleSelectChange(data);
+        }
+      }
+      options={[
+        { value: 'one', label: 'Heyyy' },
+        { value: 'two', label: 'Two' },
+      ]}
+    />
   </div>
 )
 TestInput.propTypes = {
@@ -24,16 +38,6 @@ TestInput.propTypes = {
   increment: PropTypes.func.isRequired,
   doubleAsync: PropTypes.func.isRequired,
 }
-
-// export default TestInput
-const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
-}
-
-const mapStateToProps = (state) => ({
-  counter : state.counter
-})
 
 // Component enhancer
 const enhance = compose(
